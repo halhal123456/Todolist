@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Item } from "./components/Item";
+import { Input } from "./components/Input";
 
 function App() {
   const [inputData, setInputData] = useState("");
@@ -22,10 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="title">待办事项</h1>
-      <input type="text" onChange={handleInput} />
-      <button onClick={handleAdd}>添加待办事项</button>
-
+      <Input handleInput={handleInput} handleAdd={handleAdd} />
       <ul>
         {list.map((item, index) => {
           return (
